@@ -300,6 +300,23 @@ function renderPaymentSummary() {
 		totalNode.textContent = formatPrice(finalTotal);
 }
 
+	function bindContactForm() {
+		const form = qs('[data-contact-form]');
+		if (!form) return;
+		form.addEventListener('submit', (e) => {
+			if (!form.checkValidity()) {
+				e.preventDefault();
+				e.stopPropagation();
+				form.classList.add('was-validated');
+				return;
+			}
+			e.preventDefault();
+			showToast('Mensaje enviado', 3000);
+			form.reset();
+			form.classList.remove('was-validated');
+		});
+	}
+
 function addToCart(id) {
 	const cart = getCart();
 	const numericId = Number(id);
@@ -804,4 +821,5 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	bindPayment();
+	bindContactForm();
 });
