@@ -78,8 +78,40 @@ body {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
   color: var(--text);
 }
+.card-img-top { 
+  height: 220px; /* Le da tamaño fijo a cada fila productos */
+  object-fit: cover;
+}
 .card-title { color: var(--text); }
 .card small { color: var(--muted); }
+
+.text-muted { color: rgba(255, 255, 255, 0.75) !important; }
+
+.toast-host {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 1080;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.toast-notice {
+  background: rgba(17, 24, 39, 0.9);
+  color: #e6f4ff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(57, 255, 20, 0.4);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.toast-notice.hide {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+/* Fuente blanca para contrastar con el fondo oscuro */
 
 .badge-custom {
   background: rgba(57, 255, 20, 0.15);

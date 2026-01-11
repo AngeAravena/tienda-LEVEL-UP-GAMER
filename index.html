@@ -11,12 +11,9 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> 
+    <div class="container"> 
       <a class="navbar-brand d-flex align-items-center" href="index.html">
-
-
-        <!-- logo en assets/images -->
         <img src="assets/images/favicon.ico" alt="Logo" width="44" height="44">
         <span class="ms-2 orbitron">Level-Up Gamer</span>
       </a>
@@ -30,9 +27,11 @@
           <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
           <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
           <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
-          <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-          <li class="nav-item"><a class="nav-link" href="registro.html">Registro</a></li>
-          <li class="nav-item"><a class="nav-link" href="admin.html">Admin</a></li>
+          <li class="nav-item"><a class="nav-link" href="loginAdmin.html">Admin</a></li>
+          <li class="nav-item" data-auth-section="guest"><a class="nav-link" href="login.html">Usuario</a></li>
+          <li class="nav-item" data-auth-section="guest"><a class="nav-link" href="registro.html">Registro</a></li>
+          <li class="nav-item d-none d-lg-block" data-auth-section="user" data-greeting><span class="nav-link">Hola, <span data-username></span></span></li>
+          <li class="nav-item" data-auth-section="user"><button class="btn btn-outline-light btn-sm ms-lg-2" type="button" data-logout>Cerrar sesión</button></li>
           <li class="nav-item ms-lg-3"><a class="btn btn-primary" href="productos.html">Ver catálogo</a></li>
           <li class="nav-item ms-lg-2"><span class="badge bg-secondary">Carrito <span id="cart-count">0</span></span></li>
         </ul>
@@ -48,7 +47,7 @@
           <h1 class="display-5 fw-bold">Level-Up Gamer</h1>
           <p class="lead mb-4">Consolas, periféricos, PCs y poleras personalizadas. Acumula puntos LevelUp y canjéalos por descuentos.</p>
           <div class="d-flex gap-3">
-            <a class="btn btn-primary" href="#">Explorar productos</a>
+            <a class="btn btn-primary" href="productos.html">Explorar productos</a>
             <a class="btn btn-outline-light" href="#">Ver noticias</a>
           </div>
         </div>
@@ -61,7 +60,7 @@
                 <li>Puntos por referidos y niveles</li>
                 <li>Despachos a todo Chile</li>
               </ul>
-              <a class="btn btn-primary w-100" href="#">Registrarme</a>
+              <a class="btn btn-primary w-100" href="registro.html">Registrarme</a>
             </div>
           </div>
         </div>
@@ -92,36 +91,36 @@
     <div class="container">
       <div class="d-flex justify-content-between align-items-center mb-3">
         <h4 class="mb-0">Destacados</h4>
-        <a class="btn btn-outline-dark btn-sm" href="#">Ver catálogo</a>
+        <a class="btn btn-outline-dark btn-sm" href="productos.html">Ver catálogo</a>
       </div>
-      <div class="row g-4">
+      <div class="row md-4">
         <div class="col-md-4">
           <div class="card h-100 shadow-sm">
-            <img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="PlayStation 5">
+            <img src="assets/images/ps5.jpg" class="card-img-top" alt="PlayStation 5">
             <div class="card-body">
-              <h5 class="card-title">PlayStation 5</h5>
+              <a href="producto-detalle.html?id=0" class="text-decoration-none"><h5 class="card-title">PlayStation 5</h5></a>
               <p class="card-text text-muted mb-2">$549.990</p>
-              <a class="btn btn-primary w-100" href="#">Añadir</a>
+              <button class="btn btn-primary w-100" data-add-cart="0" type="button">Añadir</button>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card h-100 shadow-sm">
-            <img src="https://images.unsplash.com/photo-1617082901431-9cd6c46c07d5?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Control Xbox">
+            <img src="assets/images/Xbox series X.jpg" class="card-img-top" alt="Control Xbox">
             <div class="card-body">
-              <h5 class="card-title">Control Xbox Series X</h5>
-              <p class="card-text text-muted mb-2">$59.990</p>
-              <a class="btn btn-primary w-100" href="#">Añadir</a>
+              <a href="producto-detalle.html?id=1" class="text-decoration-none"><h5 class="card-title">Xbox Series X</h5></a>
+              <p class="card-text text-muted mb-2">$529.990</p>
+              <button class="btn btn-primary w-100" data-add-cart="1" type="button">Añadir</button>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card h-100 shadow-sm">
-            <img src="https://images.unsplash.com/photo-1587202372775-98927a630336?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="PC Gamer">
+            <img src="assets/images/Pc gamer Asus ROG.jpg" class="card-img-top" alt="PC Gamer">
             <div class="card-body">
-              <h5 class="card-title">PC Gamer ASUS ROG</h5>
+              <a href="producto-detalle.html?id=5" class="text-decoration-none"><h5 class="card-title">PC Gamer ASUS ROG</h5></a>
               <p class="card-text text-muted mb-2">$1.299.990</p>
-              <a class="btn btn-primary w-100" href="#">Añadir</a>
+              <button class="btn btn-primary w-100" data-add-cart="5" type="button">Añadir</button>
             </div>
           </div>
         </div>
